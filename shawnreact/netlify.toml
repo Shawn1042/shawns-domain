@@ -1,0 +1,4 @@
+[build]
+  base = "updatedreactport/shawnreact"
+  command = "npm run build"
+  publish = "updatedreactport/shawnreact/dist"
