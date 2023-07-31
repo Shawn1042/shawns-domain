@@ -13,7 +13,7 @@ scroll-behavior: smooth;
 overflow-y: auto;
 scrollbar-width: none;
 color: white;
-background: url("public/img/bg.jpeg");
+background: url("img/bg.jpeg");
 
 &::-webkit-scrollbar{
   display: none;
