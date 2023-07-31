@@ -1,4 +1,4 @@
 [build]
   base = "shawnreact"
   command = "npm run build"
-  publish = "shawnreact/dist"
+  publish = "dist" 
