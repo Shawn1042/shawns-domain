@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { styled } from 'styled-components'
-import Map from './Map'
+// import Map from './Map'
 
 
 const Section = styled.div`
@@ -111,7 +111,6 @@ const handleSubmit = e => {
           </Form>
         </Left>
         <Right>
-          <Map/>
         </Right>
       </Container>
     </Section>
