@@ -112,7 +112,7 @@ const handleSubmit = e => {
           </Form>
         </Left>
         <Right>
-       <div>hello</div>
+       
         </Right>
       </Container>
     </Section>
