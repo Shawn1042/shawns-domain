@@ -5,7 +5,6 @@ const navData = [
     "Home",
     "About Me", 
     "My Work",
-    "Contact"
 ]
 
 const Section = styled.div`
@@ -29,7 +28,6 @@ padding: 15px 0px;
 @media only screen and (max-width: 768px){
     width: 100%;
     padding: 15px;
-    
 }
 
 `
@@ -128,7 +126,7 @@ function Navbar() {
                 </List>
             </Links>
             <Icons>
-                <Button>Hire Me!</Button>
+                <Button>Contact Me</Button>
             </Icons>
         </Container>
     </Section>

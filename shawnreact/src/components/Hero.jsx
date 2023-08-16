@@ -14,8 +14,6 @@ align-items: center;
 
 @media only screen and (max-width: 768px){
     height: 200vh;
-
-    
 }
 
 `
@@ -141,14 +139,9 @@ const Hero = () => {
     <Container>
       <Left>
         <Title>I Love Coding</Title>
-        <WhatWeDoSection>
-          <Line src="public/img/line.png"/>
-          <Subtitle>What I Do</Subtitle>
-        </WhatWeDoSection>
+        
         <Description>
-        I've never seen work or experience as work really, it's just fun to do.
-         Whether I'm developing a frontend using React or dabbling into MySQL databases, I always have fun doing it!
-         
+        Im a Front-End Developer located in Pennsylvania. <br/> I have a serious passion for UI effects, animations and creating intuitive, dynamic user experiences.
         </Description>
         <Button>Go down</Button>
       </Left>
@@ -157,10 +150,9 @@ const Hero = () => {
         <OrbitControls enableZoom={false}/>
         <ambientLight intensity={1}/>
         <directionalLight position={[3,2,1]}/>
-        <Sphere args={[1, 50, 100]} scale={2.5}> {/* Reduce segments */}
-  <MeshDistortMaterial color="#461959" attach="material" distort={0.5} speed={2} />
-</Sphere>
-
+      <Sphere args={[1,100,200]} scale={2.5}>
+      <MeshDistortMaterial color="#461959" attach="material" distort={0.5} speed={2}/>
+      </Sphere>
         </Canvas>
         <Img src="./img/moon.png"/>
       </Right>
@@ -169,4 +161,5 @@ const Hero = () => {
   )
 }
 
-export default Hero
+export default React.memo(Hero);
+

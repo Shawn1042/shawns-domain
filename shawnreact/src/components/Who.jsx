@@ -117,16 +117,19 @@ const Who= () => {
       </Left>
 
       <Right>
-        <Title>I Love Coding</Title>
+        <Title>About Me</Title>
         <WhatWeDoSection>
-          <Line src="line.png"/>
-          <Subtitle>What I Do</Subtitle>
+          <Line src="img/line.png"/>
+          <Subtitle>Shawn Holmes</Subtitle>
         </WhatWeDoSection>
         <Description>
-          I love to code everyday.
+        I'm quietly confident, naturally curious, and I enjoy the road to improving my problem thinkings skills every day.
            
         </Description>
-        <Button>Hire Me To code</Button>
+        
+        <Description>
+        I love to work on challenging projects.
+        </Description>
         
       </Right>
     </Container>
