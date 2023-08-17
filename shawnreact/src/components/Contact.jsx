@@ -78,24 +78,31 @@ flex: 1;
 
 
 const Contact = () => {
+  const ref = useRef();
+  const [success, setSuccess] = useState(null);
 
-  
-const ref = useRef()
-const [success, setSuccess] = useState(null)
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-const handleSubmit = e => {
-
-  emailjs.sendForm('contact_service', 'template_03jbkze', ref.current, 'Luz0WnUL5FNmUQGm9')
-  .then((result) => {
-      console.log(result.text);
-      setSuccess(true)
-  }, (error) => {
-      console.log(error.text);
-      setSuccess(false)
-  });
-  e.preventDefault()
-}
-
+    emailjs
+      .sendForm('contact_service', 'template_03jbkze', ref.current, 'Luz0WnUL5FNmUQGm9')
+      .then(
+        (result) => {
+          console.log(result.text);
+          setSuccess(true);
+          ref.current.reset();
+          
+          // Clear success message after 7 seconds
+          setTimeout(() => {
+            setSuccess(null);
+          }, 7000);
+        },
+        (error) => {
+          console.log(error.text);
+          setSuccess(false);
+        }
+      );
+  };
 
   return (
     <Section>
@@ -103,20 +110,18 @@ const handleSubmit = e => {
         <Left>
           <Form ref={ref} onSubmit={handleSubmit}>
             <Title>Contact Me!</Title>
-            <Input placeholder='Name'  name='user_name'/>
-            <Input placeholder='Email' name='user_email'/>
-            <TextArea placeholder='Write your message please!' rows={10} name='message'/>
+            <Input placeholder='Name' name='user_name' />
+            <Input placeholder='Email' name='user_email' />
+            <TextArea placeholder='Write your message please!' rows={10} name='message' />
             <Button type='submit'>Send Email</Button>
             {success &&
-             "Your message has been sent. I'll get back to you soon :)"}
+              "Your message has been sent. I'll get back to you soon :)"}
           </Form>
         </Left>
-        <Right>
-       
-        </Right>
+        <Right></Right>
       </Container>
     </Section>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;
