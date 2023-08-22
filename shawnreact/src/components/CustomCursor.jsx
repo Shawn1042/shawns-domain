@@ -1,58 +1,79 @@
 import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const pulsate = keyframes`
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    background: radial-gradient(circle, rgba(40, 0, 60, 0.9), rgba(75, 0, 130, 0.6));
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+    background: radial-gradient(circle, rgba(60, 10, 80, 0.9), rgba(95, 10, 150, 0.6));
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    background: radial-gradient(circle, rgba(40, 0, 60, 0.9), rgba(75, 0, 130, 0.6));
+  }
+`;
 
 const Cursor = styled.div`
   position: absolute;
   width: 20px;
   height: 20px;
-  background-color: rgba(40, 0, 60, 0.9); // Dark purple color for the main circle
+  background: radial-gradient(circle, rgba(40, 0, 60, 0.9), rgba(75, 0, 130, 0.6));
   border-radius: 50%;
   transform: translate(-50%, -50%);
   pointer-events: none;
-  transition: all 0.2s ease;
   z-index: 9999;
-  box-shadow: 0 0 5px rgba(75, 0, 130, 0.9), // Smaller, inner glow in a lighter purple
-              0 0 15px rgba(75, 0, 130, 0.9), // Medium glow
-              0 0 30px rgba(75, 0, 130, 0.9); // Outermost glow
+  animation: ${props => props.isStationary ? pulsate : 'none'} 1.5s infinite;
 
-  // Inner circle with its own glow
   &::before {
     content: "";
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 10px;
-    height: 10px;
-    background-color: black; 
+    width: 40px;
+    height: 40px;
+    background: rgba(75, 0, 130, 0.3);
     border-radius: 50%;
     transform: translate(-50%, -50%);
-    box-shadow: 0 0 5px rgba(0, 0, 255, 0.7), 
-                0 0 10px rgba(0, 0, 255, 0.7),
-                0 0 15px rgba(0, 0, 255, 0.7);
+    opacity: 0.7;
   }
 `;
 
-
 const CustomCursor = () => {
     const [position, setPosition] = useState({ x: 0, y: 0 });
+    const [isMoving, setIsMoving] = useState(true);
+    let moveTimer;
 
     useEffect(() => {
+        document.body.style.cursor = 'none';
+
         const handleMouseMove = (event) => {
             setPosition({
                 x: event.clientX,
                 y: event.clientY
             });
+            setIsMoving(true);
+            
+            clearTimeout(moveTimer);
+            moveTimer = setTimeout(() => {
+                setIsMoving(false);
+            }, 2000); // start animation after 2 seconds of inactivity
         };
 
         document.addEventListener("mousemove", handleMouseMove);
 
         return () => {
             document.removeEventListener("mousemove", handleMouseMove);
+            document.body.style.cursor = 'auto';
+            clearTimeout(moveTimer);
         };
     }, []);
 
     return (
         <Cursor 
+            isStationary={!isMoving}
             style={{
                 left: `${position.x}px`,
                 top: `${position.y}px`
