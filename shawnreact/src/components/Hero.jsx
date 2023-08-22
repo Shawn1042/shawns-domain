@@ -1,8 +1,8 @@
-import React from 'react'
-import { styled } from 'styled-components'
-import Navbar from './Navbar'
-import { MeshDistortMaterial, OrbitControls, Sphere } from '@react-three/drei'
-import { Canvas } from '@react-three/fiber'
+import React from 'react';
+import styled from 'styled-components';
+import Navbar from './Navbar';
+import { MeshDistortMaterial, OrbitControls, Sphere } from '@react-three/drei';
+import { Canvas } from '@react-three/fiber';
 
 const Section = styled.div`
 height:100vh;
@@ -132,33 +132,39 @@ animation: animate 2s infinite ease alternate;
 }
 `
 
+const handleContactClick = () => {
+  const contactSection = document.getElementById("contact-section");
+  if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+  }
+};
+
 const Hero = () => {
-  return (
-    <Section>
-    <Navbar />
+return (
+  <Section>
+    <Navbar onContactClick={handleContactClick} />
     <Container>
       <Left>
         <Title>I Love Coding</Title>
-        
         <Description>
-        Im a Front-End Developer located in Pennsylvania. <br/> I have a serious passion for UI effects, animations and creating intuitive, dynamic user experiences.
+          I'm a Front-End Developer located in Pennsylvania. <br/> I have a serious passion for UI effects, animations, and creating intuitive, dynamic user experiences.
         </Description>
-        <Button>Go down</Button>
+        <Button>Go Down</Button>
       </Left>
       <Right>
-      <Canvas>
-        <OrbitControls enableZoom={false}/>
-        <ambientLight intensity={1}/>
-        <directionalLight position={[3,2,1]}/>
-      <Sphere args={[1,100,200]} scale={2.5}>
-      <MeshDistortMaterial color="#461959" attach="material" distort={0.5} speed={2}/>
-      </Sphere>
+        <Canvas>
+          <OrbitControls enableZoom={false} />
+          <ambientLight intensity={1} />
+          <directionalLight position={[3, 2, 1]} />
+          <Sphere args={[1, 100, 200]} scale={2.5}>
+            <MeshDistortMaterial color="#461959" attach="material" distort={0.5} speed={2} />
+          </Sphere>
         </Canvas>
-        <Img src="./img/moon.png"/>
+        <Img src="./img/moon.png" />
       </Right>
     </Container>
-    </Section>
-  )
+  </Section>
+);
 }
 
 export default React.memo(Hero);
