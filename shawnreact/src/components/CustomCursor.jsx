@@ -4,15 +4,15 @@ import styled, { keyframes } from 'styled-components';
 const pulsate = keyframes`
   0% {
     transform: translate(-50%, -50%) scale(1);
-    background: radial-gradient(circle, rgba(40, 0, 60, 0.9), rgba(75, 0, 130, 0.6));
+    background: radial-gradient(circle, rgba(255, 94, 77, 0.9), rgba(255, 165, 0, 0.6));
   }
   50% {
     transform: translate(-50%, -50%) scale(1.2);
-    background: radial-gradient(circle, rgba(60, 10, 80, 0.9), rgba(95, 10, 150, 0.6));
+    background: radial-gradient(circle, rgba(255, 85, 60, 0.9), rgba(255, 155, 0, 0.6));
   }
   100% {
     transform: translate(-50%, -50%) scale(1);
-    background: radial-gradient(circle, rgba(40, 0, 60, 0.9), rgba(75, 0, 130, 0.6));
+    background: radial-gradient(circle, rgba(255, 94, 77, 0.9), rgba(255, 165, 0, 0.6));
   }
 `;
 
@@ -20,7 +20,7 @@ const Cursor = styled.div`
   position: absolute;
   width: 20px;
   height: 20px;
-  background: radial-gradient(circle, rgba(40, 0, 60, 0.9), rgba(75, 0, 130, 0.6));
+  background: radial-gradient(circle, rgba(255, 94, 77, 0.9), rgba(255, 165, 0, 0.6));
   border-radius: 50%;
   transform: translate(-50%, -50%);
   pointer-events: none;
@@ -34,7 +34,7 @@ const Cursor = styled.div`
     left: 50%;
     width: 40px;
     height: 40px;
-    background: rgba(75, 0, 130, 0.3);
+    background: rgba(255, 155, 0, 0.3);
     border-radius: 50%;
     transform: translate(-50%, -50%);
     opacity: 0.7;
