@@ -110,9 +110,9 @@ const Contact = () => {
         <Left>
           <Form ref={ref} onSubmit={handleSubmit}>
             <Title>Contact Me!</Title>
-            <Input placeholder='Name' name='user_name' />
-            <Input placeholder='Email' name='user_email' />
-            <TextArea placeholder='Write your message please!' rows={10} name='message' />
+            <Input placeholder='Name' name='user_name' required />
+            <Input placeholder='Email' name='user_email'  required/>
+            <TextArea placeholder='Write your message please!' rows={10} name='message' required />
             <Button type='submit'>Send Email</Button>
             {success === true && <Message>Your message has been sent. I'll get back to you soon :)</Message>}
             {success === false && <Message>Oops! Something went wrong. Please try again.</Message>}
