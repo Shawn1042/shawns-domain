@@ -56,13 +56,14 @@ list-style: none;
 }
 `;
 
-const ListItem= styled.li`
+const ListItem = styled.li`
 cursor: pointer;
 font-size: 17px;
 font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+color: gray;
 
 &:hover{
-    color: lightgray;
+    color: white;
     transition: 1s;
     border-bottom: 1px;
 }
