@@ -7,7 +7,7 @@ const BackgroundAudio = ({ play }) => {
         const audio = audioRef.current;
 
         if (play) {
-            audio.volume = 0.08;
+            audio.volume = 0.07;
             audio.loop = true;
             audio.play();
         } else {
