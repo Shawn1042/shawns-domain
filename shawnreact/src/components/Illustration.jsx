@@ -37,7 +37,7 @@ const Illustration = () => {
     </Canvas>
     
     <Descrip>
-      These 3D modals are imported from Sketchfab! This is a 3D modal of Goku from the 
+      This is a 3D modal of Goku from the 
       animated series called Dragon Ball! This form Goku currently has is called 
       Mastered Ultra Instinct!
     </Descrip>

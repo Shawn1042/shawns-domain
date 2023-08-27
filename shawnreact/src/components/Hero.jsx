@@ -57,20 +57,6 @@ font-size: 74px;
     
 }
 `
-
-const WhatWeDoSection = styled.div`
-
-display: flex;
-align-items: center;
-gap: 10px;
-`
-
-const Line = styled.img`height: 5px;`
-
-const Subtitle = styled.h2`
-color: cornflowerblue;
-`
-
 const Description = styled.p`
 font-size: 24px;
 color: lightgray;
@@ -160,7 +146,7 @@ return (
             <MeshDistortMaterial color="#461959" attach="material" distort={0.5} speed={2} />
           </Sphere>
         </Canvas>
-        <Img src="./img/moon.png" />
+        <Img src="./img/moon.png" loading="lazy" />
       </Right>
     </Container>
   </Section>
