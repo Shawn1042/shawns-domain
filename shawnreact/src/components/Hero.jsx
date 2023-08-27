@@ -57,10 +57,10 @@ font-size: 74px;
     
 }
 `
+
 const Description = styled.p`
 font-size: 24px;
 color: lightgray;
-
 
 @media only screen and (max-width: 768px){
     padding: 20px;
@@ -90,9 +90,6 @@ flex: 3;
     width: 100%;
 }
 `
-
-
-
 
 const Img = styled.img`
 width: 800px;
