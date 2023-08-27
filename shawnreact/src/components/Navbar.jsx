@@ -6,7 +6,6 @@ const navData = [
     "Home",
     "About Me", 
     "My Work",
-    "Contact Me"
 ];
 
 const Section = styled.div`
