@@ -4,6 +4,7 @@ import Hero from "./components/Hero"
 import Who from "./components/Who"
 import Works from "./components/Works"
 import CustomCursor from "./components/CustomCursor"
+import BackgroundAudio from "./components/BackgroundAudio"
 
 
 const Container = styled.div`
@@ -28,6 +29,7 @@ function App() {
 
   return (
     <Container>
+    <BackgroundAudio/>
      <CustomCursor />
      <Hero/>
      <Who/>
@@ -38,3 +40,4 @@ function App() {
 }
 
 export default App
+
