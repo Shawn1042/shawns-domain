@@ -95,7 +95,7 @@ const Contact = () => {
           // Clear success message after 7 seconds
           setTimeout(() => {
             setSuccess(null);
-          }, 7000);
+          }, 6000);
         },
         (error) => {
           console.log(error.text);
