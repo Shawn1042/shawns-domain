@@ -3,10 +3,11 @@ import styled, { keyframes } from 'styled-components';
 import BackgroundAudio from './BackgroundAudio';
 
 const navData = [
-    "Home",
-    "About Me", 
-    "My Work",
+    { title: "Home", id: "Home" },
+    { title: "About Me", id: "About-Me" },
+    { title: "My Work", id: "My-Work" }
 ];
+
 
 const Section = styled.div`
     display: flex;
@@ -61,14 +62,20 @@ const ListItem = styled.li`
     cursor: pointer;
     font-size: 17px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: gray;
+`;
 
-    &:hover{
+const Anchor = styled.a`
+    text-decoration: none;
+    color: gray;
+    cursor: pointer;
+
+    &:hover {
         color: white;
         transition: 1s;
-        border-bottom: 1px;
+        border-bottom: 1px solid white; // assuming you wanted a border-bottom on hover from your previous ListItem styles
     }
 `;
+
 
 const Icons = styled.div`
     display: flex;
@@ -141,10 +148,14 @@ function Navbar({ onContactClick }) {
               <Links>
                  <Logo src="./img/superman.jpg"/>
                  <List>
-                     {navData.map((item) => (
-                         <ListItem key={item}>{item}</ListItem>
-                     ))}
-                 </List>
+                    {navData.map((item) => (
+                        <ListItem key={item.id}>
+                            <Anchor href={`#${item.id}`}>{item.title}</Anchor>
+                        </ListItem>
+    ))}
+</List>
+
+
               </Links>
               <Icons>
                   <Button onClick={onContactClick}>

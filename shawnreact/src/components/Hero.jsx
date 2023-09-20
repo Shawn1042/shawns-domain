@@ -5,18 +5,17 @@ import { MeshDistortMaterial, OrbitControls, Sphere } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 
 const Section = styled.div`
-height:100vh;
-scroll-snap-align:center;
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-align-items: center;
+  height: 100vh;
+  scroll-snap-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 
-@media only screen and (max-width: 768px){
+  @media only screen and (max-width: 768px){
     height: 200vh;
-}
-
-`
+  }
+`;
 
 const Container = styled.div`
 height: 100%;
@@ -114,40 +113,47 @@ animation: animate 2s infinite ease alternate;
   }
 }
 `
-
 const handleContactClick = () => {
   const contactSection = document.getElementById("contact-section");
   if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
+    contactSection.scrollIntoView({ behavior: 'smooth' });
+  }
+};
+
+const handleGoDownClick = () => {
+  const aboutMeSection = document.getElementById("About-Me");
+  if (aboutMeSection) {
+    aboutMeSection.scrollIntoView({ behavior: 'smooth' });
   }
 };
 
 const Hero = () => {
-return (
-  <Section>
-    <Navbar onContactClick={handleContactClick} />
-    <Container>
-      <Left>
-        <Title>I Love Coding</Title>
-        <Description>
-          I'm a Front-End Developer located in Pennsylvania. <br/> I have a serious passion for UI effects, animations, and creating intuitive, dynamic user experiences.
-        </Description>
-        <Button>Go Down</Button>
-      </Left>
-      <Right>
-        <Canvas>
-          <OrbitControls enableZoom={false} />
-          <ambientLight intensity={1} />
-          <directionalLight position={[3, 2, 1]} />
-          <Sphere args={[1, 100, 200]} scale={2.5}>
-            <MeshDistortMaterial color="#461959" attach="material" distort={0.5} speed={2} />
-          </Sphere>
-        </Canvas>
-        <Img src="./img/moon.png" loading="lazy" />
-      </Right>
-    </Container>
-  </Section>
-);
+  return (
+    <Section id="Home">
+      <Navbar onContactClick={handleContactClick} />
+      <Container>
+        <Left>
+          <Title>I Love Coding</Title>
+          <Description>
+            I'm a Front-End Developer located in Pennsylvania. <br/>
+            I have a serious passion for UI effects, animations, and creating intuitive, dynamic user experiences.
+          </Description>
+          <Button onClick={handleGoDownClick} id="About-Me">Go Down</Button>
+        </Left>
+        <Right>
+          <Canvas>
+            <OrbitControls enableZoom={false} />
+            <ambientLight intensity={1} />
+            <directionalLight position={[3, 2, 1]} />
+            <Sphere args={[1, 100, 200]} scale={2.5}>
+              <MeshDistortMaterial color="#461959" attach="material" distort={0.5} speed={2} />
+            </Sphere>
+          </Canvas>
+          <Img src="./img/moon.png" loading="lazy" />
+        </Right>
+      </Container>
+    </Section>
+  );
 }
 
 export default React.memo(Hero);

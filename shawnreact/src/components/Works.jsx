@@ -104,7 +104,7 @@ const Works = () => {
   const [work,setWork] = useState("Web Design")
 
   return (
-  <Section>
+  <Section id="My-Work">
   <Container>
     <Left>
       <List>

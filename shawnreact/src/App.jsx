@@ -27,19 +27,21 @@ background-size: cover;
 `
 
 function App() {
-
   return (
-    <Container>
-    <RainBackground/>
-    <BackgroundAudio/>
-     <CustomCursor />
-     <Hero/>
-     <Who/>
-     <Works/>
-     <Contact/>
-    </Container>
+      <Container>
+          <RainBackground/>
+          <BackgroundAudio/>
+          <CustomCursor />
+
+          <Hero id="Home"/>
+          <Who id="About-Me"/>
+          <Works id="My-Work"/>
+          <Contact id="Contact"/>
+
+      </Container>
   )
 }
+
 
 export default App
 
