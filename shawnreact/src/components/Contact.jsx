@@ -92,10 +92,10 @@ const Contact = () => {
           setSuccess(true);
           ref.current.reset();
           
-          // Clear success message after 6 seconds
+          // Clear success message after 7 seconds
           setTimeout(() => {
             setSuccess(null);
-          }, 6000);
+          }, 7000);
         },
         (error) => {
           console.log(error.text);
