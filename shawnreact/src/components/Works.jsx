@@ -9,8 +9,8 @@ import Illustration from './Illustration'
 const data = [
   "Tech",
   "Development",
-  "Creative",
-  "Product Design",
+  "Creativity",
+  "Technology",
 ]
 
 const Section = styled.div`
@@ -68,7 +68,8 @@ position: relative;
   position: absolute;
   top: 0;
   left: 0;
-  color: pink;
+  color: #9f14d5;
+  -webkit-text-stroke: 1.4px black;
   width: 0;
   overflow: hidden;
   white-space: nowrap;
@@ -114,7 +115,7 @@ const Works = () => {
       </List>
       </Left>
         <Right>
-          {work==="Tech" ? (<WebDesign/>) : work === "Development" ? (<Development/>) :  work === "Creative" ? (<Illustration/>) : <ProductDesign/>}
+          {work==="Tech" ? (<WebDesign/>) : work === "Development" ? (<Development/>) :  work === "Creativity" ? (<Illustration/>) : <ProductDesign/>}
         </Right>
       </Container>
     </Section>
