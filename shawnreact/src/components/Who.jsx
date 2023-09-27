@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from 'styled-components'; // Updated import for styled-components
-import Cube from './Cube';
+import React, { useMemo } from 'react';
+import styled from 'styled-components';
+const Cube = React.lazy(() => import('./Cube'));
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 
@@ -79,16 +79,20 @@ const Description = styled.p`
 `;
 
 const Who = () => {
+    const cameraProps = useMemo(() => ({ fov: 25, position: [5, 5, 5] }), []);
+
     return (
         <Section id="About-Me">
             <Container>
                 <Left>
-                    <Canvas camera={{ fov: 25, position: [5, 5, 5] }}>
-                        <OrbitControls enableZoom={false} autoRotate={true} />
-                        <ambientLight intensity={1} />
-                        <directionalLight position={[3, 2, 1]} />
-                        <Cube />
-                    </Canvas>
+                    <React.Suspense fallback={<div>Loading...</div>}>
+                        <Canvas camera={cameraProps}>
+                            <OrbitControls enableZoom={false} autoRotate={true} />
+                            <ambientLight intensity={1} />
+                            <directionalLight position={[3, 2, 1]} />
+                            <Cube />
+                        </Canvas>
+                    </React.Suspense>
                 </Left>
                 <Right>
                     <Title>About Me</Title>
@@ -109,4 +113,3 @@ const Who = () => {
 };
 
 export default Who;
-
