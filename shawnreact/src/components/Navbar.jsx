@@ -5,7 +5,7 @@ import BackgroundAudio from './BackgroundAudio';
 const navData = [
     { title: "Home", id: "Home" },
     { title: "About Me", id: "About-Me" },
-    { title: "My Work", id: "My-Work" }
+    { title: "What I Use", id: "My-Work" }
 ];
 
 
@@ -72,7 +72,7 @@ const Anchor = styled.a`
     &:hover {
         color: white;
         transition: 1s;
-        border-bottom: 1px solid white; // assuming you wanted a border-bottom on hover from your previous ListItem styles
+        border-bottom: 1px solid white; 
     }
 `;
 

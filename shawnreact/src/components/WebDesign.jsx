@@ -6,8 +6,8 @@ import { styled } from 'styled-components'
 
 const Descrip = styled.div`
 width: 200px;
-height: 55px;
-padding: 20px;
+height: 30px;
+padding: 21px;
 background-color: white;
 border-radius: 8px;
 position: absolute;
@@ -35,7 +35,7 @@ const WebDesign = () => {
       <OrbitControls enableZoom={false} autoRotate/>
     </Canvas>
     <Descrip>
-      I built an internal Excel, Power Bi, HTML, and CSS training website for my company!
+      I use an HP laptop for personal work!
     </Descrip>
     </>
     
