@@ -20,8 +20,8 @@ const rainAnimation = keyframes`
 const Raindrop = styled.div`
   position: absolute;
   background: linear-gradient(rgba(200, 200, 255, 0.7) 30%, rgba(200, 200, 255, 0.7) 30%, rgba(200, 200, 255, 0.7) 70%, rgba(200, 200, 255, 0.7) 70%);
-  width: 1px;
-  height: 10px;
+  width: 1.5px;
+  height: 15px;
   animation: ${rainAnimation} 0.5s linear infinite;
 
   &:nth-child(odd) {

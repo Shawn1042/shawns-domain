@@ -1,5 +1,5 @@
 import React, { Suspense, lazy } from 'react';
-import { styled } from "styled-components";
+import styled  from "styled-components";
 
 const RainBackground = lazy(() => import('./components/RainBackground'));
 const BackgroundAudio = lazy(() => import('./components/BackgroundAudio'));
