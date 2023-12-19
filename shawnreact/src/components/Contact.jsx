@@ -172,7 +172,7 @@ const Contact = () => {
 
           setTimeout(() => {
             setSuccess(null);
-          }, 7000);
+          }, 8000);
         },
         (error) => {
           console.log(error.text);
