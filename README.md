@@ -1,7 +1,7 @@
 Welcome to the source code repository for my personal portfolio website! This site is a living showcase of my programming prowess, passion for UI effects, and animations.
 
 ## Website Link
-[https://shawnreact.vercel.app/](https://shawnreact.vercel.app/)
+https://shawnreact.vercel.app/
 
 ## Features
 
@@ -23,22 +23,16 @@ To run this project locally:
 1. **Clone the repository:**
    ```bash
    git clone https://github.com/Shawn1042/shawns-domain.git
-Navigate to the project directory:
+   
+2. **Navigate to the project directory:**
+   ```bash
+   cd shawnreact
+3. **Install dependencies::**
+   ```bash
+   npm install
+4. **Start the development server:**
+   ```bash
+   npm run dev
 
-bash
-Copy code
-cd shawnreact
-Install dependencies:
-
-bash
-Copy code
-npm install
-Start the development server:
-
-bash
-Copy code
-npm run dev
-
-
-Contact
+CONTACT
 Should you wish to reach out to me, please use the contact form on the website.
